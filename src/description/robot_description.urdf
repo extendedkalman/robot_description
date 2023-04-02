@@ -133,6 +133,12 @@
     <origin xyz="${caster_xoff} 0.0 ${-(base_height/2)}" rpy="0 0 0"/>
   </joint>
 
+  <gazebo reference="front_caster">
+    <material>Gazebo/Black</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+
   <link name="imu_link">
     <visual>
       <geometry>
@@ -230,9 +236,7 @@
  
   <gazebo>
     <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
-      <ros>
-        <namespace>/demo</namespace>
-      </ros>
+      
 
       <!-- wheels -->
       <left_joint>drivewhl_l_joint</left_joint>
